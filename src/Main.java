@@ -1,11 +1,14 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+
 public class Main {
     private static final int PORT = 4444;
+    private static final String DuncanIP = "";
+    public static void main(String[] args) throws IOException {
+
 
     public static void main(String[] args) {
 
@@ -32,13 +35,19 @@ public class Main {
         return new Socket(IP, port);
     }
 
+    private static void sendMessage(String message) throws IOException {
+        byte[] byteArray = message.getBytes();
+        OutputStream ops = connect(DuncanIP, PORT).getOutputStream();
+        ops.write(byteArray);
+        ops.flush();
+        ops.close();
+
     /**
      * Reads all bytes from the given Socket's InputStream and returns the results in form of a new String object
      * @param toRead Socket to read from
      * @return The String read from this Socket
      * @throws IOException uh oh stinky
      */
-    private static String readString(Socket toRead) throws IOException {
-        return new String(toRead.getInputStream().readAllBytes());
+
     }
 }
