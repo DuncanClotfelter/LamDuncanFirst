@@ -9,9 +9,6 @@ public class Main {
     private static final String DuncanIP = "";
     public static void main(String[] args) throws IOException {
 
-
-    public static void main(String[] args) {
-
     }
 
     /**
