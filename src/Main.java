@@ -1,13 +1,14 @@
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+
 public class Main {
     private static final int PORT = 4444;
+    private static final String DuncanIP = "";
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args) {
-        System.out.println("Hello Lam");
-        //comment: hello
     }
 
     /**
@@ -29,5 +30,13 @@ public class Main {
      */
     private static Socket connect(String IP, int port) throws IOException {
         return new Socket(IP, port);
+    }
+
+    private static void sendMessage(String message) throws IOException {
+        byte[] byteArray = message.getBytes();
+        OutputStream ops = connect(DuncanIP, PORT).getOutputStream();
+        ops.write(byteArray);
+        ops.flush();
+        ops.close();
     }
 }
