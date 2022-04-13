@@ -33,8 +33,7 @@ public class Main {
     }
 
     /**
-     * Instantiates an InputStreamReader and BufferedReader in order to read a single String from the given Socket.
-     * Horribly inefficient.
+     * Reads all bytes from the given Socket's InputStream and returns the results in form of a new String object
      * @param toRead Socket to read from
      * @return The String read from this Socket
      * @throws IOException uh oh stinky
