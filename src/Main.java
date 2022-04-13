@@ -38,6 +38,7 @@ public class Main {
         ops.write(byteArray);
         ops.flush();
         ops.close();
+    }
 
     /**
      * Reads all bytes from the given Socket's InputStream and returns the results in form of a new String object
@@ -45,6 +46,7 @@ public class Main {
      * @return The String read from this Socket
      * @throws IOException uh oh stinky
      */
-
+    private static String readString(Socket toRead) throws IOException {
+        return new String(toRead.getInputStream().readAllBytes());
     }
 }
